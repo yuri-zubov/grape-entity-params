@@ -5,14 +5,6 @@ module Grape
     module Params
       # I am a factory to create a parameter class
       module Param
-        @descendants = []
-        class << self
-          attr_reader :descendants
-          def inherited(subclass)
-            @descendants << subclass
-          end
-        end
-
         self.attr_reader :descendants
         def self.for(entity)
           smart_entity = EntityFactory.for(entity)
