@@ -1,6 +1,6 @@
 # Grape::Entity::Params
 
-A simple grape-entity adapter to allow parse Grape Entity representers as param validators
+A simple grape-entity adapter to allow using grape-entity with swagger documentation for input param validations
 
 ## Installation
 
