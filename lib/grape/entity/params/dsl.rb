@@ -6,12 +6,13 @@ module Grape
       module DSL
         module Validations
           def use(*names)
+            options = names.extract_options!
             standard_names = names.select { |name| [String, Symbol].include? name.class }
             non_standard_names = names - standard_names
             standard_names += non_standard_names.map do |entity|
               UseEntity.new(@api, entity).build
             end
-            super(*standard_names)
+            super(*standard_names, **options)
           end
         end
 
